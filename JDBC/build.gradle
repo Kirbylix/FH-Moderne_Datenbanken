@@ -1,0 +1,24 @@
+group 'JDBC'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+apply plugin: 'findbugs'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = 'main';
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.xerial', name:'sqlite-jdbc', version: '3.8.11.2'
+}
+
+task wrapper(type: Wrapper){
+    gradleVersion = '2.12'
+}
